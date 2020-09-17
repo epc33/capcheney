@@ -95,6 +95,7 @@ exports.postSignup = (req, res, next) => {
 
   const user = new User({
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password
   });
 
