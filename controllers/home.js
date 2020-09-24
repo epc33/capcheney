@@ -1,10 +1,12 @@
-const Product = require(
+const Product = require(".../models/Products");
 /**
  * GET /
  * Home page.
  */
 exports.index = (req, res) => {
-  res.render('home', {
-    title: 'Products'
+  Products.find({},(err,products) => {
+      if (err) throw err;
+      console.log(product);
+      res.render('home',{ product: product })
   });
-};
+}  
