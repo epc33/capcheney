@@ -42,7 +42,7 @@ const ediSchema = new mongoose.Schema([
 		PO107: String,
 		PO108: Number,
 		PO109: String,
-		PO10: Number,
+		PO10:  Number,
 		PID01: String,
 		PID02: String
 	}
