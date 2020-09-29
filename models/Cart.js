@@ -6,10 +6,10 @@ const cartSchema = new mongoose.Schema({
 	products: [
 		{
 			productName: String,
-			description: String,
-			price: Number,
-			quantity: Number,
-			total: Number
+			productDescription: String,
+			productPrice: Number,
+			productQuantity: Number,
+			productTotal: Number
 		}
 		],
 		
