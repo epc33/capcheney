@@ -1,0 +1,11 @@
+extends layout
+
+block content
+ h1 Your Cart
+  h2='Order ID: ' + shoppingCart.orderID
+  h2='Customer ID: ' + shoppingCart.customerID
+  h2='Customer Name: ' + shoppingCart.firstName + ' ' + shoppingCart.lastName
+  hr
+  h2='Products'
+  h2='Total Items: ' + shoppingCart.totalItems
+  h2='Order Total: ' + shoppingCart.cartTotal
