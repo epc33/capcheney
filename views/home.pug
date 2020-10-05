@@ -2,11 +2,13 @@ extends layout
 
 
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
+  h1 Cheney Appliance Mart
+  p.lead The best place for nifty appliances.
   hr
   .row
     .col-md-6
+      img(src="images/SuperMicrowave.png" alt=product.productName height=250 width=250)
+     
       h2=product[0].productId
       p=product[0].productName
       p=product[0].productPrice
@@ -14,6 +16,8 @@ block content
       p
         a.btn.btn-raised(href='#', role='button') View details »
     .col-md-6
+      img(src="images/oven.png" alt=product.productName height=250 width=250)
+      
       h2=product[1].productId
       p=product[1].productName
       p=product[1].productPrice
@@ -21,6 +25,8 @@ block content
       p
         a.btn.btn-raised(href='#', role='button') View details »
     .col-md-6
+      img(src="images/refridgorator.png" alt=product.productName height=250 width=250)
+      
       h2=product[2].productId
       p=product[2].productName
       p=product[2].productPrice
@@ -28,6 +34,8 @@ block content
       p
         a.btn.btn-raised(href='#', role='button') View details »
     .col-md-6
+      img(src="images/dishwasher.png" alt=product.productName height=250 width=250)
+      
       h2=product[3].productId
       p=product[3].productName
       p=product[3].productPrice
