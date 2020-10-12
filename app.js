@@ -124,8 +124,13 @@ app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/d
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
 app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }));
 
-//Cart
+//Cart Routes
 app.get('/shoppingcart',shoppingCartController.viewShoppingCart);
+app.get('/shoppingCart/addproduct',cartController.addProduct);
+app.post('/shoppingCart/updateproduct',cartController.updateproduct);
+app.post('/shoppingCart/deleteproduct',cartController.deleteproduct);
+app.get('/shoppingCart/checkout',cartController.checkOut);
+app.post('/shoppingCart/checkout',cartController.processOrder);
 
 /**
  * Primary app routes.
