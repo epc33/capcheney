@@ -34,7 +34,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const productController = require('./controllers/product');
-//const cartController = require('./controllers/cart');
+const cartController = require('./controllers/cart');
 
 /**
  * API keys and Passport configuration.
@@ -151,7 +151,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
  * shopping cart routes.
  */
-//app.get('/account/shoppingcart', cartController.getAllItems);
+app.get('/account/shoppingcart', cartController.getAllItems);
 /**
  * product routes.
  */

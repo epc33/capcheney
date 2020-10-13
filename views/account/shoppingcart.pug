@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1 Shopping Cart
+    hr
+    .row
+        each cart in carts
+            .col-md-10
+                p
+                p image here
+                p
+                p="Product ID: "+cart.productId
+                p="Product Name: "+cart.productName
+                p="Item Description: "+cart.productDescription
+                p="Price $"+cart.productCost
+                p="Quantity: "+cart.productQuantity
+                .col-md-2
+                    p 
+                        a.btn.btn-raised(href='#', role='button') View Item
+                        a.btn.btn-raised(href='#', role='button') Remove Item
+                        label.col-md-3.col-form-label.font-weight-bold.text-right(for='Change Quantity') Change Quantity
+                            .col-md-7
+                                input.form-control(value=cart.productQuantity)
