@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    h1 All Refrigerators
+    hr
+    .row
+        each product in products
+            .col-md-6
+                p
+                p image here
+                p
+                p="ID "+product.productId
+                p="Name "+product.productName

@@ -12,11 +12,19 @@
           a.nav-link(href='/') Home
         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
           a.nav-link(href='/contact') Contact
-        li.nav-item(class=(title === 'Status') ? 'active' : undefined)
-          a.nav-link(href='/status') Status
-        li.nav-item(class=(title === 'Cart') ? 'active' : undefined)
-          a.nav-link(href='/shoppingcart') Cart  
-      ul.nav.navbar-nav.ml-auto
+        li.dropdown(class=(title === 'All Products Dropdown') ? 'active' : undefined).nav-item
+          a.dropfwon-toggle.nav-link(href='#', data-toggle='dropdown') Products
+            div.dropdown-menu
+              a.dropdown-item(href='/products/allproducts') All Products
+              div.dropdown-divider
+              a.dropdown-item(href='/products/refrigerators') Refrigerators
+              div.dropdown-divider
+              a.dropdown-item(href='/products/microwaves') Microwaves
+              div.dropdown-divider
+              a.dropdown-item(href='/products/stoves') Stoves
+        if user
+          li.nav-item(class=(title === 'Shopping Cart') ? 'active' : undefined)
+            a.nav-link(href='/account/shoppingcart') Shopping Cart
         if !user
           li.nav-item(class=(title === 'Login') ? 'active' : undefined)
             a.nav-link(href='/login') Login

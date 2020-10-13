@@ -33,7 +33,8 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
-const shoppingCartController = require('./controllers/shoppingCart');
+const productController = require('./controllers/product');
+//const cartController = require('./controllers/cart');
 
 /**
  * API keys and Passport configuration.
@@ -124,14 +125,6 @@ app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/d
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/jquery/dist'), { maxAge: 31557600000 }));
 app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'), { maxAge: 31557600000 }));
 
-//Cart Routes
-app.get('/shoppingcart',shoppingCartController.viewShoppingCart);
-app.get('/shoppingCart/addproduct',cartController.addProduct);
-app.post('/shoppingCart/updateproduct',cartController.updateproduct);
-app.post('/shoppingCart/deleteproduct',cartController.deleteproduct);
-app.get('/shoppingCart/checkout',cartController.checkOut);
-app.post('/shoppingCart/checkout',cartController.processOrder);
-
 /**
  * Primary app routes.
  */
@@ -155,6 +148,17 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
+/**
+ * shopping cart routes.
+ */
+//app.get('/account/shoppingcart', cartController.getAllItems);
+/**
+ * product routes.
+ */
+app.get('/products/allproducts', productController.getAllProducts);
+app.get('/products/refrigerators', productController.getRefrigerator);
+app.get('/products/microwaves', productController.getMicrowave);
+app.get('/products/stoves', productController.getStove);
 /**
  * API examples routes.
  */
