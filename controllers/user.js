@@ -45,6 +45,8 @@ exports.postLogin = (req, res, next) => {
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
+      user.loggedIn = true;
+      user.save();
       req.flash('success', { msg: 'Success! You are logged in.' });
       res.redirect(req.session.returnTo || '/');
     });
@@ -56,6 +58,8 @@ exports.postLogin = (req, res, next) => {
  * Log out.
  */
 exports.logout = (req, res) => {
+  //req.user.loggedIn = false;
+  req.user.save();
   req.logout();
   req.session.destroy((err) => {
     if (err) console.log('Error : Failed to destroy the session during logout.', err);

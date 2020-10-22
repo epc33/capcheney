@@ -7,7 +7,9 @@ block content
         each product in products
             .col-md-6
                 p
-                p image here
+                a(href="../images/" + product.productID + ".png" alt=product.productID target="new")
+                    img(src="../images/" + product.productID + ".png" alt=product.productID height=250 width 250)
+                p                
                 p
-                p="ID "+product.productId
+                p="ID "+product.productID
                 p="Name "+product.productName
