@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   username: {type: String, unique: true},
   password: String,
+  loggedIn: Boolean,
+  accountID: {type: Number, unique: true},
   passwordResetToken: String,
   passwordResetExpires: Date,
   emailVerificationToken: String,
